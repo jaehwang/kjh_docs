@@ -16,7 +16,7 @@
 \input{macro.tex}
 
 \title{QCon San Francisco 2010}
-\author{김재황 // 소프트웨어센터}
+\author{김재황 \\ 소프트웨어센터}
 
 \begin{document}
 
@@ -24,12 +24,28 @@
 
 \section{개요}
 
-QCon은 
-The Annual International Software Development Conference
+QCon의 또 다른 이름은 ``The Annual International Software Development
+Conference''이다. 매년 샌프란시스코, 런던, 도쿄, 베이징, 상파울루에서
+각각 한번씩 열린다. 
+
+소프트웨어 관련 최신 이슈를 골고루 다루려는 노력을 한 것으로는 
+보이지만 웹 기반의 서비스를 개발하는 쪽에 치우쳐 있다.
+
+\begin{figure}[t]
+    \begin{Frame}
+        \begin{center}
+        \pgfimage[width=.8\textwidth,page=1]{slide-qcon}
+        \end{center}
+    \end{Frame}
+    \caption{QCon 2010}
+    \label{qcon}
+\end{figure}
 
 \section{세션들}
 
 \subsection{Tutorial 11/1 REST from Scratch}
+
+발표자 Guilherme Silveira의 여자 친구는 브라질의 한국 교포라고 한다.
 
 \begin{figure}[t]
     \begin{Frame}
@@ -77,7 +93,7 @@ Martin Fowler, Jez Humble, Tom Sulston 세 명이 합동 진행한 튜토리얼.
     \label{Continuous Delivery 2}
 \end{figure}
 
-그외에 영어가 짧아서 제대로 이해를 못한 건지 아저씨들이 설명을 안한고
+영어가 짧아서 제대로 이해를 못한 건지 아저씨들이 설명을 안한고
 넘어간 건지 모를 용어들: canary releasing, dark launching, event
 sourcing 등.
 
@@ -89,14 +105,24 @@ sourcing 등.
 에디슨의 ``천재는 1\%의 영감과 99\%의 땀으로 만들어진다''는 말을
 인용했는데 매우 공감이 감.
  
-Pretotyping이라는 concept을 얘기함.
 \begin{quote}
-Build the right `it' before you build `it' right.
-http://pretotyping.org  
+``Build the right `it' before you build `it' right.''
 \end{quote}
  
-들을 때는 다 공감이 갔었는데 이렇게 정리하고 나니 right thing이 idea랑
-같은 게 아닌가하는 생각이 드네...
+혁신은 아이디어 보다는 결국 땀을 흘릴 수 있는 사람에 의해서 가능하다는 뜻인 듯.
+아이디어, 혹은 영감은 번득 든 생각을 의미하는 것으로 이해할 수 있다. 
+아이디어가 정말 우리가 필요로하는 것인지 아닌지는 직접 겪어봐야 알 수 있다.
+직접 겪어 보기 위해서는 땀을 좀 흘려야 하는 것이고.
+
+\begin{figure}[t]
+    \begin{Frame}
+        \begin{center}
+        \pgfimage[width=.8\textwidth,page=1]{slide-pretotype}
+        \end{center}
+    \end{Frame}
+    \caption{Innovation at Google}
+    \label{pretotyping}
+\end{figure}
 
 \subsection{Conference 11/3 Clojure-Java Interop: A Better Java than Java}
 
