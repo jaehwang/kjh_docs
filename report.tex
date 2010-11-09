@@ -1,0 +1,52 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fullpage}
+\usepackage{kotex}
+
+\usepackage{ifpdf} 
+\ifpdf
+    \usepackage[unicode]{hyperref}
+    \input glyphtounicode\pdfgentounicode=1 
+\else
+    \usepackage[unicode,dvipdfm]{hyperref} 
+\fi
+
+\usepackage{pgf}
+
+\input{macro.tex}
+
+\title{QCon San Francisco 2010}
+\author{김재황}
+
+\begin{document}
+
+\maketitle
+
+\section{개요}
+
+\section{세션들}
+
+\subsection{REST}
+
+\begin{figure}[t]
+    \begin{Frame}
+        \begin{center}
+        \pgfimage[width=.8\textwidth,page=1]{slide-rest}
+        \end{center}
+    \end{Frame}
+    \caption{REST from Scratch}
+    \label{REST}
+\end{figure}
+
+개발자들이 파이선에서 루비로 옮겨 가고 있다는데... 당연히 일은
+재미있어야 하지만 자기만 재미있으면 안 될 것이다. 이 아저씨 회사가 하는
+일이 교육이라서 신 기술을 좋아하는 건 아니겠지?
+
+\subsection{Continuous Delivery}
+
+\begin{figure}
+\pgfimage[width=.8\textwidth,page=1]{slide-continuous-delivery}
+\end{figure}
+
+
+\end{document}

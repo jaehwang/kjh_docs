@@ -1,0 +1,16 @@
+\def\doframeit#1{\vbox{%
+  \hrule height\fboxrule
+    \hbox{%
+      \vrule width\fboxrule \kern\fboxsep
+      \vbox{\kern\fboxsep #1\kern\fboxsep }%
+      \kern\fboxsep \vrule width\fboxrule }%
+    \hrule height\fboxrule }}
+
+\def\frameit{\smallskip \advance \linewidth by -50.5pt \setbox0=\vbox
+  \bgroup \strut \ignorespaces }
+
+\def\endframeit{\ifhmode \par \nointerlineskip \fi \egroup
+  \doframeit{\box0}}
+
+\newenvironment{Frame} {\vspace{3mm}\par\begin{frameit}\vspace{-5mm}}
+  {\end{frameit}\vspace{-3mm}}

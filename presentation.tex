@@ -1,0 +1,31 @@
+% \documentclass{beamer}
+\documentclass[10pt,unicode]{beamer}
+
+\usepackage{kotex}
+
+% \usepackage{ifpdf} 
+% \ifpdf
+%     \usepackage[unicode]{hyperref}
+%     \input glyphtounicode\pdfgentounicode=1 
+% \else
+%     \usepackage[unicode,dvipdfm]{hyperref} 
+% \fi
+
+\usetheme{default}
+\usecolortheme{lily}
+\usecolortheme{orchid}
+
+\title{QCon San Francisco 2010}
+\author{김재황}
+\institute{Software Center}
+
+\begin{document}
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+\input{slide-rest}
+\input{slide-continuous-delivery.tex}
+
+\end{document}
