@@ -21,3 +21,4 @@ slide-%.pdf: slidebase.tex slide-%.tex
 clean:
 	rm -rf slidecontent.tex
 	rm -rf *.aux *.log *.nav *.out *.pdf *.snm *.toc
+	rm -rf *~
