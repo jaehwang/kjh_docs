@@ -1,0 +1,28 @@
+\begin{frame}
+\frametitle{Hot Swapping Your Engine at 30,000 Feet}
+
+\begin{enumerate}
+\item Email gone wild
+    \begin{itemize}
+    \item 사이트가 엉망이 되고 나니 엄청난 메일이 왔다는 소리인듯. 
+    \item Shopzilla를 redesign해서 architecture를 제대로 잡아보기로 함
+    \end{itemize}
+\item Kitchen sinks don't scale
+    \begin{itemize}
+    \item J2EE에서 벗어나기로 함. J2EE가 개수대 구멍이었다는 얘기인듯.
+    \item 모든 일은 concurrenty하게 하고, sub system장애 시에도 큰 문제가 없는 architecture를 설계함
+    \end{itemize}
+\item Sharing ain't caring
+    \begin{itemize}
+    \item Shopzilla의 설계를 Bizrate에도 적용하기로 함.
+    \item 비슷한 사이트이고 code 도 공유하기 때문에 이런 결정을 내렸으나 코드 관리에 상당한 애를 먹음
+    \end{itemize}
+\item SEO(search engine optimizer) suicide
+    \begin{itemize}
+    \item Agile정신에 입각해 한 페이지 씩 수정된 버전을 릴리즈하기로 함.
+    \item Value와 risk 모두를 조기에 확인하기 위함.
+    \item 마지막 6개월은 초각을 다투며 미친 듯이 일함. Agile이 원래 인런가? 질문해 볼 걸하는 생각이 지금 드네.
+    \item 페이지가 하나씩 바뀌는 바람에  검색엔진이 괴로웠을 거라는 얘기인듯.
+    \end{itemize}
+\end{enumerate}
+\end{frame}

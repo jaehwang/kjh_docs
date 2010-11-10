@@ -1,6 +1,6 @@
 #slides=rest cont-delivery
 slides=rest continuous-delivery clojure-java google agile-agile dsl qcon \
-       pretotype
+       pretotype cloud swapping-engine lambda
 
 rerun = "(There were undefined references|Rerun to get (cross-references|the bars) right)"
 
@@ -21,5 +21,5 @@ slide-%.pdf: slidebase.tex slide-%.tex
 
 clean:
 	rm -rf slidecontent.tex
-	rm -rf *.aux *.log *.nav *.out *.pdf *.snm *.toc *.rel
+	rm -rf *.aux *.log *.nav *.out *.pdf *.snm *.toc *.rel *.vrb
 	rm -rf *~

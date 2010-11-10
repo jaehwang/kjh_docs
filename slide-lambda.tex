@@ -1,0 +1,41 @@
+\begin{frame}[fragile]
+\frametitle{Many-Core Java}
+
+Project Lambda: 
+\begin{itemize}
+\item \mbtt{http://openjdk.java.net/projects/lambda/}
+\item 2009년 12월부터 시작. 2012년 Java SE8에 릴리즈 하는 것이 목표.
+\end{itemize}
+
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        Ideas
+        \begin{itemize}
+        \item Closure
+        \item SAM(single abstract method)
+        \item Type Inference
+        \end{itemize}
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+        But
+        \begin{itemize}
+        \item Library
+        \item Kingdom of Noun
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+\lstset{language=Java,basicstyle=\small}
+\begin{block}<+->{Sample}
+%\begin{beamercolorbox}{beamer color}
+\begin{lstlisting}
+hiscore = 
+    students.filter(#{Student s -> s.graduate == 2010})
+            .map   (#{s -> s.socre}) 
+            .max   ();
+\end{lstlisting}
+\end{block}
+%\end{beamercolorbox}
+
+\end{frame}

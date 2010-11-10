@@ -1,5 +1,9 @@
 \documentclass[10pt,unicode,serif,compress,slidetop]{beamer}
 
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{listings}
+\input{macro.tex}
+
 \usepackage{kotex}
 
 \usetheme{default}
@@ -16,13 +20,24 @@
     \titlepage
 \end{frame}
 
+\section{QCon}
 \input{slide-qcon}
+
+\section{REST and DSL}
 \input{slide-rest}
-\input{slide-continuous-delivery.tex}
-\input{slide-pretotype.tex}
-\input{slide-clojure-java.tex}
-\input{slide-google.tex}
-\input{slide-agile-agile.tex}
 \input{slide-dsl.tex}
+
+\section{Culture}
+\input{slide-pretotype.tex}
+\input{slide-agile-agile.tex}
+
+\section{Development Infrastructure}
+\input{slide-continuous-delivery.tex}
+\input{slide-google.tex}
+
+\section{Java}
+\input{slide-clojure-java.tex}
+\input{slide-cloud.tex}
+\input{slide-lambda.tex}
 
 \end{document}
