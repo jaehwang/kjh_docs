@@ -1,6 +1,6 @@
 #slides=rest cont-delivery
 slides=rest continuous-delivery clojure-java google agile-agile dsl qcon \
-       pretotype cloud swapping-engine lambda
+       pretotype cloud swapping-engine lambda clojure-concurrent
 
 rerun = "(There were undefined references|Rerun to get (cross-references|the bars) right)"
 

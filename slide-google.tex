@@ -1,4 +1,4 @@
-\begin{frame}
+\begin{frame}[allowframebreaks]
 \frametitle{Developing Products at the Speed and Scale of Google}
 
 \begin{itemize}
@@ -14,14 +14,11 @@
 
 \item 동시에 많은 사람들이 check-out할 때 병목 발생 함
     \begin{itemize}
-    \item Check-out 시 FUSE를 사용해 수정하는 10%만 writable 하게 하고 나머지는 read-only로 빌드 시 전송 한다고 함
+    \item Check-out 시 FUSE를 사용해 수정하는 10\%만 writable 하게 하고 나머지는 read-only로 빌드 시 전송 한다고 함
     \item 버전 관리 도구는 Perforce
+    \item 자체 빌드 도구를 사용한다고 함
     \end{itemize}
-
-\item 자체 빌드 도구를 사용한다고 함
-    \begin{itemize}
-    \item GCC 를 수정해서  이전 바이너리와 새 object파일들을 이용해 새 binary를 만드는 방식을 이용함. 이를 통해 빌드 속도 10배 향상
-    \end{itemize}
+\item GCC 를 수정해서  이전 바이너리와 새 object파일들을 이용해 새 binary를 만드는 방식을 이용함. 이를 통해 빌드 속도 10배 향상
 
 \item Code consistency: code review, analysis, test, ...
     \begin{itemize}

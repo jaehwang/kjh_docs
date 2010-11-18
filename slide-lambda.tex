@@ -3,11 +3,21 @@
 
 Project Lambda: 
 \begin{itemize}
-\item \mbtt{http://openjdk.java.net/projects/lambda/}
 \item 2009년 12월부터 시작. 2012년 Java SE8에 릴리즈 하는 것이 목표.
+\item \mbtt{http://openjdk.java.net/projects/lambda/}
 \end{itemize}
 
-\begin{columns}
+\lstset{language=Java,basicstyle=\small}
+\begin{block}<+->{Example}
+\begin{lstlisting}
+hiscore = 
+    students.filter(#{Student s -> s.graduate == 2010})
+            .map   (#{s -> s.socre}) 
+            .max   ();
+\end{lstlisting}
+\end{block}
+
+\begin{columns}[t]
     \begin{column}{0.5\textwidth}
         Ideas
         \begin{itemize}
@@ -25,17 +35,5 @@ Project Lambda:
         \end{itemize}
     \end{column}
 \end{columns}
-
-\lstset{language=Java,basicstyle=\small}
-\begin{block}<+->{Sample}
-%\begin{beamercolorbox}{beamer color}
-\begin{lstlisting}
-hiscore = 
-    students.filter(#{Student s -> s.graduate == 2010})
-            .map   (#{s -> s.socre}) 
-            .max   ();
-\end{lstlisting}
-\end{block}
-%\end{beamercolorbox}
 
 \end{frame}
