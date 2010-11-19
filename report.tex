@@ -26,7 +26,7 @@
 
 \section{개요}
 
-QCon은 직업적으로 소프트웨어를 만드는 사람들이 관심을 가질만한 
+QCon은 직업적으로 software professional들이 관심을 가질만한 
 다양한 주제들 한 자리에 모아 놓은 컨퍼런스라고 할 수 있다. 11월 1일부터 5일까지
 샌프란시스코에서 열렸던 QCon의 프로그램도 Agile, Java, NoSQL, REST, 
 개발과 운영, architecture, cloud, 보안, parallel programming
@@ -45,17 +45,20 @@ QCon은 직업적으로 소프트웨어를 만드는 사람들이 관심을 가�
 \section{세션들}
 
 소프트웨어 개발 practice나 Java 관련 세션에 비중을 두고 참석할 세션을
-골랐다. 
+골랐다.
 
 \subsection{Tutorial 11/1 REST from Scratch}
 
-소프트웨어 개발 infra를 구축하다보면 어쩔수 없이 웹 프로그래밍을 하게 되는 
-경우가 많다. 게다가 세상이 이미 웹이라는 거대한 망으로 묶여 있기도 해서 
-WWW 관련 기술에는 관심을 안 가질 수 없다고 생각한다.
+Caelum의 Guilherme Silveira이 진행한 튜토리얼.
+
+소프트웨어 개발 infrastructure를 구축하다보면 어쩔수 없이 웹 프로그래밍을 
+하게 되는 경우가 많다. 게다가 세상이 이미 웹이라는 거대한 망으로 묶여 있기도 
+해서 WWW 관련 기술에는 관심을 안 가질 수 없다고 생각한다. Architecture적으로도
+WWW에는 배우고 깊이 생각해볼 만한 토픽도 많고.
 
 REST(Representational State Transfer)에 대해서는 다 알고 왔을 거라고 전제를 
-하더니만 제목과는 다르게 막바로 Restfulie라는 REST framework에 대한 설명에 
-돌입했다. 어쩔 수 없이 wikipedia를 참고해보니 REST는 ``WWW과 같은 분산 
+하더니만 제목과는 다르게 막바로 Restfulie\footnote{http://restfulie.caelum.com.br/}라는 REST framework에 대한 설명에 
+돌입했다. 어쩔 수 없이 wikipedia를 참고했다. REST는 ``WWW과 같은 분산 
 하이퍼미디어 시스템을 위한 소프트웨어 아키텍처의 한 
 형식(architectural style)''\footnote{http://ko.wikipedia.org/wiki/REST}이라고 
 한다.
@@ -70,18 +73,23 @@ REST(Representational State Transfer)에 대해서는 다 알고 왔을 거라�
     \label{REST}
 \end{figure}
 
+항공 예약 사이트(TICKET), 신용카드 결재 사이트(PAY), 캘린더 사이트(CAL)가 
+있다고 하자.
+예약은 TICKET에서 한다. 여정, 항공사 등을 다 선택한 후 예약 페이지에 있는 
+예약 버튼을 눌렀다고 하자. `예약'이 하나 TICKET에 만들어 진것이다. 
+
 발표자 Guilherme Silveira의 여자 친구가 브라질의 한국 교포라고 한다.
 상파울루에서 서울로 가는 비행기 예약하는 경우를 예로 들면서 튜토리얼을 
 진행하기도 했고, 슬라이드에 한국에서 찍은 사진을 사용하기도 했다.
 프리젠테이션에 사용한 맥북의 언어 설정도 한국어로 해 놨었다.
 
-꽤 스마트해 보여서 따로 만나 얘기를 좀 나눴다. 브라질 상파울루 지역에서는 
-개발자들이 파이선에서 루비로 옮겨 가는 중이라고 한다. 같이 얘기하던 미국 친구도
-맞장구를 쳤다.
+% 꽤 스마트해 보여서 따로 만나 얘기를 좀 나눴다. 브라질 상파울루 지역에서는 
+% 개발자들이 파이선에서 루비로 옮겨 가는 중이라고 한다. 같이 얘기하던 미국 친구도
+% 맞장구를 쳤다.
 
-당연히 일은
-재미있어야 하지만 자기만 재미있으면 안 될 것이다. 이 아저씨 회사가 하는
-일이 교육이라서 신 기술을 좋아하는 건 아니겠지?
+% 당연히 일은
+% 재미있어야 하지만 자기만 재미있으면 안 될 것이다. 이 아저씨 회사가 하는
+% 일이 교육이라서 신 기술을 좋아하는 건 아니겠지?
 
 \subsection{Tutorial 11/2 Continuous Delivery}
 
