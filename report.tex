@@ -32,24 +32,54 @@ QCon은 직업적으로 software professional들이 관심을 가질만한
 개발과 운영, architecture, cloud, 보안, parallel programming
 등의 내용으로 채워져 있었다. 
 
-\begin{figure}[t]
-    \begin{Frame}
-        \begin{center}
-        \pgfimage[width=.8\textwidth,page=1]{slide-qcon}
-        \end{center}
-    \end{Frame}
-    \caption{QCon 2010}
-    \label{qcon}
-\end{figure}
+\begin{itemize}
+\item Tutorial
+    \begin{itemize}
+    \item REST from Scratch
+    \item Continuous Delivery
+    \item  Clarity Rules: Six Collaboration Skills for Effective, Successful Teams
+    \item Rulemakers and Toolmakers: Adaptive Object Models as Agile Division of Labor
+    \item Resource-Oriented Architectures: Information First
+    \item Secrets of Agile Architecture
+    \item Individual and Team Dynamics: Fundamental Skills Needed to Deliver on the Promise of Lean and Agile
+    \end{itemize}
+\item Conference Track
+    \begin{itemize}
+    \item Agile Evolution
+    \item Architectures You've Always Wondered About
+    \item Dev and Ops: A Single Team
+    \item Java, the Platform
+    \item Architecture Anarchists
+    \item Learning from Experience
+    \item NoSQL
+    \item Securing the Web: Capabilities, JavaScript, and HTML
+    \item Design at Scale
+    \item Intuitive Parallel Programming
+    \item Real Life Cloud Architectures
+    \item SOA for the REST of Us
+    \end{itemize}
+\end{itemize}
+
+    컨퍼런스 웹사이트 \url{http://qconsf.com/sf2010/}에서 좀 더 자세한 내용이나 slide 파일을 얻을 수 있다.
+
+% \begin{figure}[t]
+%     \begin{Frame}
+%         \begin{center}
+%         \pgfimage[width=.8\textwidth,page=1]{slide-qcon}
+%         \end{center}
+%     \end{Frame}
+%     \caption{QCon 2010}
+%     \label{qcon}
+% \end{figure}
 
 \section{세션들}
 
 소프트웨어 개발 practice나 Java 관련 세션에 비중을 두고 참석할 세션을
 골랐다.
 
-\subsection{Tutorial 11/1 REST from Scratch}
+\subsection{REST from Scratch}
 
-Caelum의 Guilherme Silveira이 진행한 튜토리얼.
+Tutorial 11/1. Caelum의 Guilherme Silveira의 튜토리얼.
 
 소프트웨어 개발 infrastructure를 구축하다보면 어쩔수 없이 웹 프로그래밍을 
 하게 되는 경우가 많다. 게다가 세상이 이미 웹이라는 거대한 망으로 묶여 있기도 
@@ -57,11 +87,10 @@ Caelum의 Guilherme Silveira이 진행한 튜토리얼.
 WWW에는 배우고 깊이 생각해볼 만한 토픽도 많고.
 
 REST(Representational State Transfer)에 대해서는 다 알고 왔을 거라고 전제를 
-하더니만 제목과는 다르게 막바로 Restfulie\footnote{http://restfulie.caelum.com.br/}라는 REST framework에 대한 설명에 
-돌입했다. 어쩔 수 없이 wikipedia를 참고했다. REST는 ``WWW과 같은 분산 
-하이퍼미디어 시스템을 위한 소프트웨어 아키텍처의 한 
-형식(architectural style)''\footnote{http://ko.wikipedia.org/wiki/REST}이라고 
-한다.
+하더니만 제목과는 다르게 막바로 Restfulie\nocite{restfulie}라는 REST 
+framework에 대한 설명에 돌입했다. 어쩔 수 없이 wikipedia를 참고했다. 
+REST는 ``WWW과 같은 분산 하이퍼미디어 시스템을 위한 소프트웨어 아키텍처의 한 
+형식(architectural style)''\footnote{\url{http://ko.wikipedia.org/wiki/REST}}이라고 한다.
 
 \begin{figure}[t]
     \begin{Frame}
@@ -73,15 +102,15 @@ REST(Representational State Transfer)에 대해서는 다 알고 왔을 거라�
     \label{REST}
 \end{figure}
 
-항공 예약 사이트(TICKET), 신용카드 결재 사이트(PAY), 캘린더 사이트(CAL)가 
-있다고 하자.
-예약은 TICKET에서 한다. 여정, 항공사 등을 다 선택한 후 예약 페이지에 있는 
-예약 버튼을 눌렀다고 하자. `예약'이 하나 TICKET에 만들어 진것이다. 
-
-발표자 Guilherme Silveira의 여자 친구가 브라질의 한국 교포라고 한다.
-상파울루에서 서울로 가는 비행기 예약하는 경우를 예로 들면서 튜토리얼을 
-진행하기도 했고, 슬라이드에 한국에서 찍은 사진을 사용하기도 했다.
-프리젠테이션에 사용한 맥북의 언어 설정도 한국어로 해 놨었다.
+% 항공 예약 사이트(TRIP), 신용카드 결재 사이트(PAY), 캘린더 사이트(CAL)가 
+% 있다고 하자. 각 사이트에서 여행
+% 예약은 TICKET에서 한다. 여정, 항공사 등을 다 선택한 후 예약 페이지에 있는 
+% 예약 버튼을 눌렀다고 하자. `예약'이 하나 TICKET에 만들어 진것이다. 
+% 
+% 발표자 Guilherme Silveira의 여자 친구가 브라질의 한국 교포라고 한다.
+% 상파울루에서 서울로 가는 비행기 예약하는 경우를 예로 들면서 튜토리얼을 
+% 진행하기도 했고, 슬라이드에 한국에서 찍은 사진을 사용하기도 했다.
+% 프리젠테이션에 사용한 맥북의 언어 설정도 한국어로 해 놨었다.
 
 % 꽤 스마트해 보여서 따로 만나 얘기를 좀 나눴다. 브라질 상파울루 지역에서는 
 % 개발자들이 파이선에서 루비로 옮겨 가는 중이라고 한다. 같이 얘기하던 미국 친구도
@@ -91,17 +120,22 @@ REST(Representational State Transfer)에 대해서는 다 알고 왔을 거라�
 % 재미있어야 하지만 자기만 재미있으면 안 될 것이다. 이 아저씨 회사가 하는
 % 일이 교육이라서 신 기술을 좋아하는 건 아니겠지?
 
-\subsection{Tutorial 11/2 Continuous Delivery}
-
+\subsection{Continuous Delivery}
+Tutorial 11/2.
 Martin Fowler, Jez Humble, Tom Sulston 세 명이 합동 진행한 튜토리얼.
-셋이서 각본을 잘 준비한 건 아닌 것 같았다.
-
-이 분들의 머리 속에는 여러가지 덕목이 기본으로 깔려있겠지만 그 중 다음
-이야기를 하나 건졌다.
+% 셋이서 각본을 잘 준비한 건 아닌 것 같았다.
+% 
+% 이 분들의 머리 속에는 여러가지 덕목이 기본으로 깔려있겠지만 그 중 다음
+% 이야기를 하나 건졌다.
 
 \begin{quote}
 ``If it hurts, do it more often, and bring the pain forward.''  
 \end{quote}
+
+``Continuous delivery''는 code의 변경이 
+제품이 release해도 되는 지 판단하는 것이 어렵다면 
+release를 좀 더 자주하라는 
+
 
 자동화를 엄청나게 강조했다. 불행히도 울분을 토로하는 연극 배우 같이
 ``연기'' 형식으로 이야기를 하는 바람에 자세한 내용을 알아들을 수는 없었다.
@@ -780,5 +814,8 @@ Java로서는 기존 코드와의 호환성을 고려하지 않을 수가 없단
 % 
 % 2010년 11월 6일 새별 2시 8분.
 % 샌프란시스코에서
+
+\bibliographystyle{plain}
+\bibliography{references}
 
 \end{document}

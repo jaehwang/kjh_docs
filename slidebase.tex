@@ -1,4 +1,4 @@
-\documentclass[10pt,serif]{beamer}
+\documentclass[10pt,unicode,serif]{beamer}
 
 \usepackage{kotex}
 
@@ -10,6 +10,9 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{listings}
 \input{macro.tex}
+
+\renewcommand{\cite}[1]{} % report.pdf에 삽입할 pdf에서는 reference하지 말자.
+\renewcommand{\nocite}[1]{} % report.pdf에 삽입할 pdf에서는 reference하지 말자.
 
 \begin{document}
 

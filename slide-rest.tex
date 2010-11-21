@@ -1,22 +1,101 @@
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{REST from Scratch}
 
-Guilherme Silveira, Caelum.
- 
+\begin{center}
 REST = Representational State Transfer
+\end{center}
 
 \begin{itemize}
-\item 시공을 통합하는 어플리케이션을 만들면 좋겠네.
-  \begin{itemize}
-  \item google/apple apps: 지도, 캘린더, ...
-  \item 리치 클라이언트: 자바스크립트를 실행 할 수 있는. 보안 문제를
-    해결해야
-  \item URI망?
-  \end{itemize}
-\item  WEB, HTML, XHTML, microformats, json, xforms, ... 뭐시 너무 많다.
-\item DSL: comlexity를 숨기기 위한 방법. 유지보수는 어떻게?
-\item Versioning: 서버 기술도 급격히 계속 발전하고, 브라우저도
-  다양하고, 브라우저도 계속 개선되니... 버전 관리 방안도 중요
+\item 고유한 식별자(URI)를 갖는 resource 존재
+\item Resource의 representation을 표준 interface(e.g. HTTP)로 통신
+\item 제약 조건
+\begin{itemize}
+\item Client-server
+\item Stateless
+\item Cacheable
+\item Layered system
+\item Code on demand
+\item Uniform interface
+\end{itemize}
+\item REST style architecture의 예: WWW
 \end{itemize}
 
 \end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\frametitle{Restfulie Example}
+
+\begin{itemize}
+\item Restfulie: \url{http://restfulie.caelum.com.br/}
+\[
+\mbox{REST} + \mbox{HATEOAS} \Rightarrow \mbox{Restfulie framework}
+\]
+\item HATEOAS: Hypermedia as the Engine of Application State
+\end{itemize}
+
+Example Resources:
+\begin{itemize}
+    \item trip: \mbtt{http://TRIP/f/523a3f23}
+    \item payment: URI unknown at compile time
+\end{itemize}
+
+\begin{block}<1->{Trip}
+\lstset{basicstyle=\ttfamily\small,language=xml}
+\begin{lstlisting}
+<flight>
+ <information> <from>Seoul</from> <to>Busan</to> 
+ </information>
+ <value>100</value>
+ <link rel="payment" href="http://PAY/a/23342q4"/>
+</flight>
+\end{lstlisting}
+\end{block}
+
+\pagebreak
+
+TRIP과 별도 사이트인 PAY를 통해 비용 지불.
+
+\begin{block}<1->{Code example: payment}
+\lstset{basicstyle=\ttfamily\small,language=java}
+\begin{lstlisting}
+flight = Client.at('http://TRIP/f/523a3f23').get();
+confirmation = 
+    flight.getLink("payment").patch(cardInfo, value);
+\end{lstlisting}
+\end{block}
+
+Calender에 여행 일정 추가 후, calendar에서 일정 삭제하면 TRIP과 PAY에서도 
+취소 처리가 되도록 할 수도 있다.
+
+\begin{block}<1->{Code example: calendar integration}
+\lstset{basicstyle=\ttfamily\small,language=java}
+\begin{lstlisting}
+me = Client.at('http://CAL').with(auth).get();
+me.link("calendar").patch(flight.link("self"));
+\end{lstlisting}
+\end{block}
+
+\end{frame}
+
+% \begin{frame}
+% \frametitle{REST from Scratch}
+% 
+% Guilherme Silveira, Caelum.
+%  
+% REST = Representational State Transfer
+% 
+% \begin{itemize}
+% \item 시공을 통합하는 어플리케이션을 만들면 좋겠네.
+%   \begin{itemize}
+%   \item google/apple apps: 지도, 캘린더, ...
+%   \item 리치 클라이언트: 자바스크립트를 실행 할 수 있는. 보안 문제를
+%     해결해야
+%   \item URI망?
+%   \end{itemize}
+% \item  WEB, HTML, XHTML, microformats, json, xforms, ... 뭐시 너무 많다.
+% \item DSL: comlexity를 숨기기 위한 방법. 유지보수는 어떻게?
+% \item Versioning: 서버 기술도 급격히 계속 발전하고, 브라우저도
+%   다양하고, 브라우저도 계속 개선되니... 버전 관리 방안도 중요
+% \end{itemize}
+% 
+% \end{frame}

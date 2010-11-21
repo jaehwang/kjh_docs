@@ -1,38 +1,53 @@
-\begin{frame}[allowframebreaks=0.5]
+\begin{frame}[allowframebreaks]
 \frametitle{Continuous Dlivery}
 
-Martin Fowler, Jez Humble, Tom Sulston. ThoughtWorks.
+\begin{quote}
+Software always production ready!
+\end{quote}
 
-Three Prerequisites of Continuous Delivery:
 \begin{itemize}
-\item Excellent automated testing at all levels
-\item Comprehensive configuration management
-\item Continuous Integration: feature branch로 인한 문제 해결이 목표
+  \item Prerequisites 
   \begin{itemize}
-  \item main stream에 코드를 자주 모으자.
-  \item 다른 말로는, 자동으로 매일 merge를 하자.
-  \item Build, unit test, analysis, packaging
+  \item Excellent automated testing at all levels
+  \item Comprehensive configuration management
+  \item Continuous integration
+  %  \begin{itemize}
+  %  \item main stream에 코드를 자주 모으자.
+  %  \item 다른 말로는, 자동으로 매일 merge를 하자.
+  %  \item Build, unit test, analysis, packaging
+  %  \end{itemize}
+  \end{itemize}
+
+  \item ``Deployment Pipeline''
+  \begin{itemize}
+  \item Commit state
+  \item Automated acceptance testing
+  \item Automated capacity testing
+  \item Manual testing
+  \item Release
   \end{itemize}
 \end{itemize}
 
-Acceptance test의 자동화와 production environment에 자동으로
-deployment하는 것이 핵심인 듯.
+\pagebreak
+
+주요 이슈
  
 \begin{itemize}
-\item Test automation
+\item Test Automation
   \begin{itemize}
   \item Functional acceptance test, unit test, integration test,
     system test, performance test, security test는 당연히(?) 자동으로
-    하는 걸로 보더군.
-  \item Showcase, exploratory testing, usability testing은 자동화 하기
-    어렵다는 군. 이동네의 숙제인듯.
+  \item Showcase, exploratory testing, usability testing은 자동화 하기 어려움.
+    숙제.
   \end{itemize}
-\item Deployment automation: Deployment의 자동화는 주로 네트웍(웹)
-  기반의 서비스 개발에서 그 중요성이 강조된다고 생각된다.
+\item Deployment Automation
+%: Deployment의 자동화는 주로 네트웍(웹)
+%  기반의 서비스 개발에서 그 중요성이 강조된다고 생각된다.
   \begin{itemize}
-  \item DBdeploy와 Puppet이라는 도구 선전도 함.
-  \item Feature toggle, blue-green deployments와 같은 아이디어도 소개
-  \item 잘못된 deployment의 rollback, database migration
+  \item Feature toggle, blue-green deployments
+  \item Canary release, dark launching
+  \item 잘못된 deployment의 rollback
+  \item DB migration %DBdeploy와 Puppet이라는 도구 선전도 함.
   \end{itemize}
 \end{itemize}
 

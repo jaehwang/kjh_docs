@@ -6,11 +6,12 @@ rerun = "(There were undefined references|Rerun to get (cross-references|the bar
 
 all: report.pdf presentation.pdf
 
-report.pdf: report.tex $(slides:%=slide-%.pdf)
+report.pdf: report.tex $(slides:%=slide-%.pdf) references.bib
 	pdflatex report.tex
+	bibtex report
 	(egrep -q $(rerun) report.log && pdflatex report.tex) || true
 
-presentation.pdf: presentation.tex $(slides:%=slide-%.tex)
+presentation.pdf: presentation.tex $(slides:%=slide-%.tex) references.bib
 	pdflatex presentation.tex
 	(egrep -q $(rerun) presentation.log && pdflatex presentation.tex) || true
 

@@ -1,0 +1,113 @@
+\begin{frame}[fragile,allowframebreaks]
+\frametitle{Concurrent Programming in Clojure}
+Reference: \mbtt{http://clojure.org/concurrent\_programming}
+
+\begin{center}
+Identity $\stackrel{?}{=}$ State
+\end{center}
+
+\begin{itemize}
+\item YES: Object Oriented Languages(Java, C++, Python, Ruby, ...)
+  \begin{itemize}
+  \item Identity와 identity의 state가 구분 안 됨
+  \item Object(identity)는 메모리에 저장된 state(value)
+  \item Lock이나 protocol이 없으면 stable state 보장 못 함
+  \end{itemize}
+\item NO: Clojure
+  \begin{itemize}
+  \item 현재 state는 identity와 관련된 value
+  \item Identity는 시간에 따라 다른 value(state)를 가질 수 있음
+    \begin{itemize}
+    \item 특정 시점에 identity가 가지는 state의 snapshot으로 충분?
+    \end{itemize}
+  \item Lock이 필요 없음
+    \begin{itemize}
+    \item Programming language/system에서 처리함
+    \item Software transactional memory, \mbtt{ref}, \mbtt{alter}, \mbtt{dosync}, ...
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\lstdefinelanguage{clojure}
+    {morekeywords={import,defn,let,map,ref,replicate,fn,dotimes,dosync,doseq,
+                   alter,range}
+    }
+\lstset{numbers=left,numberstyle=\tiny,stepnumber=1, numbersep=5pt,basicstyle=\ttfamily\small,language=clojure,keywordstyle=\color{blue}}
+\begin{block}<+->{Software transactional memory 예제}
+\begin{lstlisting}
+(import '(java.util.concurrent Executors))
+(defn test-stm [nitems nthreads niters]
+  (let [refs  (map ref (replicate nitems 0))
+        pool  (Executors/newFixedThreadPool nthreads)
+        tasks (map (fn [t]
+                      (fn []
+                        (dotimes [n niters]
+                          (dosync
+                            (doseq [r refs]
+                              (alter r + 1 t))))))
+                   (range nthreads))]
+    (doseq [future (.invokeAll pool tasks)]
+      (.get future))
+    (.shutdown pool)
+    (map deref refs)))
+(test-stm 2 2 2)
+\end{lstlisting}
+\end{block}
+
+$a$와 $b$가 각각 $0$이라면 $c$와 $d$는 각각 $6$이된다.
+
+\[
+\begin{array}{ll}
+(a & b)
+\end{array}
+\]
+
+\[
+\mbrm{execution}\left[
+\begin{array}{ll}
+  \mbrm{thr 0}\left\{
+  \begin{array}{l}
+    \mbrm{iter 0}\left(
+    \begin{array}{ll}
+    +1 & +1 \\
+    +0 & +0 
+    \end{array}
+    \right.\\[2ex]
+    \mbrm{iter 1}\left(
+    \begin{array}{ll}
+    +1 & +1 \\
+    +0 & +0 
+    \end{array}
+    \right.
+  \end{array}
+  \right.
+& 
+  \mbrm{thr 1}\left\{
+  \begin{array}{l}
+    \mbrm{iter 0}\left(
+    \begin{array}{ll}
+    +1 & +1 \\
+    +1 & +1 
+    \end{array}
+    \right.\\[2ex]
+    \mbrm{iter 1}\left(
+    \begin{array}{ll}
+    +1 & +1 \\
+    +1 & +1 
+    \end{array}
+    \right.
+  \end{array}
+  \right.
+\end{array}
+\right]
+\]
+
+\[
+\begin{array}{ll}
+(c & d)
+\end{array}
+\]
+
+Identity? State? Value?
+
+\end{frame}
