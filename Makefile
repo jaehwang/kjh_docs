@@ -7,8 +7,8 @@ rerun = "(There were undefined references|Rerun to get (cross-references|the bar
 all: report.pdf presentation.pdf
 
 report.pdf: report.tex $(slides:%=slide-%.pdf) references.bib report.bbl
-	pdflatex report.tex
 	bibtex report
+	pdflatex report.tex
 	(egrep -q $(rerun) report.log && pdflatex report.tex) || true
 
 presentation.pdf: presentation.tex $(slides:%=slide-%.tex) references.bib
