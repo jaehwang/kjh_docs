@@ -1,4 +1,4 @@
-\begin{frame}[fragile,allowframebreaks]
+\begin{frame}[fragile]
 \frametitle{Concurrent Programming in Clojure}
 Reference: \mbtt{http://clojure.org/concurrent\_programming}
 
@@ -28,11 +28,16 @@ Identity $\stackrel{?}{=}$ State
   \end{itemize}
 \end{itemize}
 
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks=1]
+\frametitle{Concurrent Programming in Clojure: Example}
 \lstdefinelanguage{clojure}
     {morekeywords={import,defn,let,map,ref,replicate,fn,dotimes,dosync,doseq,
                    alter,range}
     }
-\lstset{numbers=left,numberstyle=\tiny,stepnumber=1, numbersep=5pt,basicstyle=\ttfamily\small,language=clojure,keywordstyle=\color{blue}}
+\lstset{numbers=left,numberstyle=\tiny,stepnumber=1,numbersep=3pt,basicstyle=\ttfamily\small,language=clojure,keywordstyle=\color{blue}}
 \begin{block}<+->{Software transactional memory 예제}
 \begin{lstlisting}
 (import '(java.util.concurrent Executors))
@@ -54,11 +59,16 @@ Identity $\stackrel{?}{=}$ State
 \end{lstlisting}
 \end{block}
 
+\pagebreak
+
+\mbtt{(test-stm 2 2 2)}실행하면 리스트 \mbtt{((ref 0) (ref 0))}을 2개의 
+thread가 각각 2번씩 업데이트하게된다. 실행은 다음과 같다:
+
 $a$와 $b$가 각각 $0$이라면 $c$와 $d$는 각각 $6$이된다.
 
 \[
 \begin{array}{ll}
-(a & b)
+a & b
 \end{array}
 \]
 
@@ -104,7 +114,7 @@ $a$와 $b$가 각각 $0$이라면 $c$와 $d$는 각각 $6$이된다.
 
 \[
 \begin{array}{ll}
-(c & d)
+c & d
 \end{array}
 \]
 
