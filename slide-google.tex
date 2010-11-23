@@ -8,11 +8,16 @@
 \begin{itemize}
 \item 동시에 많은 사람들이 check-out할 때 병목 발생 함
     \begin{itemize}
-    \item Check-out 시 FUSE를 사용해 수정하는 10\%만 writable 하게 하고 나머지는 read-only로 빌드 시 전송 한다고 함
-    \item 버전 관리 도구는 Perforce
-    \item 자체 빌드 도구를 사용한다고 함
+    \item FUSE를 사용해 on-demand로 repository에서 파일 전송 
+         \begin{itemize}
+         \item 보통 전체 code의 약  10\% 정도만 수정됨
+         \end{itemize}
+    \item 버전 관리 도구는 Perforce. 자체 빌드 도구 개발
     \end{itemize}
-\item GCC를 수정해서  이전 바이너리와 새 object파일들을 이용해 새 binary를 만드는 방식을 이용함. 이를 통해 빌드 속도 10배 향상
+\item 이전 바이너리와 새 object파일들을 이용해 새 binary를 생성
+    \begin{itemize}
+    \item 빌드 속도 10배 향상
+    \end{itemize}
 
 \item Code consistency: code review, analysis, test, ...
     \begin{itemize}
@@ -20,7 +25,7 @@
       \begin{itemize}
       \item 코딩 스타일과 자동화가 중요함
       \end{itemize}
-    \item IDE에 통합할 예정
+%    \item IDE에 통합할 예정
     \end{itemize}
 
 \item Build machine: 1000 cores, 50+ TB 메모리
