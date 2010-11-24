@@ -2,22 +2,10 @@
 \frametitle{Developing Products at the Speed and Scale of Google}
 
 \begin{quote}
-개발자 5000+명, office 40 군데, 프로젝트 2000개, 빌드 하루에 50000번(일년에 18,000,000), 테스트 케이스 1억개
+개발자 5,000+명, office 40 군데, 프로젝트 2,000개, 빌드 하루에 50,000번(일년에 18,000,000), 테스트 케이스 1억개
 \end{quote}
 
 \begin{itemize}
-\item 동시에 많은 사람들이 check-out할 때 병목 발생 함
-    \begin{itemize}
-    \item FUSE를 사용해 on-demand로 repository에서 파일 전송 
-         \begin{itemize}
-         \item 보통 전체 code의 약  10\% 정도만 수정됨
-         \end{itemize}
-    \item 버전 관리 도구는 Perforce. 자체 빌드 도구 개발
-    \end{itemize}
-\item 이전 바이너리와 새 object파일들을 이용해 새 binary를 생성
-    \begin{itemize}
-    \item 빌드 속도 10배 향상
-    \end{itemize}
 
 \item Code consistency: code review, analysis, test, ...
     \begin{itemize}
@@ -28,10 +16,23 @@
 %    \item IDE에 통합할 예정
     \end{itemize}
 
+\item 동시에 많은 사람들이 check-out할 때 병목 발생 함
+    \begin{itemize}
+    \item FUSE를 사용해 수정되는 파일만 on-demand로 repository에서 전송 
+         \begin{itemize}
+         \item 보통 전체 code의 약  10\% 정도만 수정됨
+         \end{itemize}
+    \item 버전 관리 도구는 Perforce. 자체 빌드 도구 개발
+    \end{itemize}
+\item C++코드가 많아 컴파일 시간이 많이 걸림
+    \begin{itemize}
+    \item 이전 바이너리와 새 object파일들을 이용해 새 binary를 생성
+    \item 빌드 속도 10배 향상
+    \end{itemize}
+
 \item Build machine: 1000 cores, 50+ TB 메모리
     \begin{itemize}
     \item 계산 중심의 작업은 cloud에서 하도록 작업 진행 중
-    \item C++코드가 많아 컴파일 시간이 많이 걸림.
     \item Action cache: 1 PB용량, 7일간 보관
     \end{itemize}
 
@@ -45,5 +46,7 @@
     \item .... 
     \end{itemize}
 \end{itemize}
+
+\REFERENCE{Reference: \url{http://qconsf.com/sf2010/presentation/Developing+Products+at+the+Speed+and+Scale+of+Google}}
 
 \end{frame}
