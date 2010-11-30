@@ -1,4 +1,34 @@
 \begin{frame}[fragile]
+\frametitle{Identity and Snapshot}
+
+경보 경기의 반칙 판정
+\begin{columns}[t]
+  \begin{column}{.5\textwidth}
+\\
+  \pgfimage[width=.8\textwidth]{race_walk.png}
+  \end{column}
+  \begin{column}{.5\textwidth}
+  \lstset{language=Java,basicstyle=\ttfamily\small}
+  \begin{lstlisting}
+left  = getLeftPosition();
+right = getRightPosition();
+if(left == OFF && right == OFF) {
+    return ERROR;
+}
+  \end{lstlisting}
+  \end{column}
+\end{columns}
+
+\begin{itemize}
+\item 선수를 멈춰야 하나?(locking?)
+\item 선수의 snapshot을 구할 수 있으면 OK
+\end{itemize}
+
+\REFERENCE{\url{http://qconlondon.com/london-2009/presentation/Persistent+Data+Structures+and+Managed+References}}
+\end{frame}
+
+
+\begin{frame}[fragile]
 \frametitle{Concurrent Programming in Clojure}
 
 \begin{center}
@@ -27,9 +57,7 @@ Identity $\stackrel{?}{=}$ State
   \end{itemize}
 \end{itemize}
 
-\vfill
-
-\mbox{\tiny Reference: \mbtt{http://clojure.org/concurrent\_programming}}
+\REFERENCE{\url{http://clojure.org/concurrent\_programming}}
 
 \end{frame}
 
