@@ -52,7 +52,7 @@ Identity $\stackrel{?}{=}$ State
   \item Lock이 필요 없음
     \begin{itemize}
     \item Programming language/system에서 처리함
-    \item Software transactional memory, \mbtt{ref}, \mbtt{alter}, \mbtt{dosync}, ...
+    \item Software transactional memory, Atom, Agent, \mbtt{swap}, \mbtt{alter}, \mbtt{dosync}, ...
     \end{itemize}
   \end{itemize}
 \end{itemize}
@@ -64,12 +64,14 @@ Identity $\stackrel{?}{=}$ State
 
 \begin{frame}[fragile,allowframebreaks=1]
 \frametitle{Concurrent Programming in Clojure: Example}
+
+Software transactional memory
+
 \lstdefinelanguage{clojure}
     {morekeywords={import,defn,let,map,ref,replicate,fn,dotimes,dosync,doseq,
                    alter,range}
     }
 \lstset{numbers=left,numberstyle=\tiny,stepnumber=1,numbersep=3pt,basicstyle=\ttfamily\small,language=clojure,keywordstyle=\color{blue}}
-\begin{block}<+->{Software transactional memory 예제}
 \begin{lstlisting}
 (import '(java.util.concurrent Executors))
 (defn test-stm [nitems nthreads niters]
@@ -88,7 +90,6 @@ Identity $\stackrel{?}{=}$ State
     (map deref refs)))
 (test-stm 2 2 2)
 \end{lstlisting}
-\end{block}
 
 \pagebreak
 
@@ -149,6 +150,24 @@ c & d
 \end{array}
 \]
 
-Identity? State? Value?
+\pagebreak
+
+Atom and \mbtt{swap}
+
+\lstset{numbers=left,numberstyle=\tiny,stepnumber=1,numbersep=3pt,basicstyle=\ttfamily\small,language=clojure,keywordstyle=\color{blue}}
+\begin{lstlisting}
+(def N (atom 0))
+(defn foo [] (dotimes [i 100] (swap! N inc)))
+(defn start-threads []
+ (let [t1 (Thread. foo)
+       t2 (Thread. foo)]
+  (do (.start t1)
+      (.start t2)
+      (.join t1)
+      (.join t2))))
+(defn main []
+ (start-threads)
+ @N)
+\end{lstlisting}
 
 \end{frame}
