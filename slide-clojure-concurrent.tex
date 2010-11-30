@@ -1,7 +1,8 @@
 \begin{frame}[fragile]
-\frametitle{Identity and Snapshot}
+\frametitle{Snapshot}
 
-경보 경기의 반칙 판정
+특정 시점에 대상이 가지는 상태를 인지할 수 없다면?
+
 \begin{columns}[t]
   \begin{column}{.5\textwidth}
 \\
@@ -20,7 +21,7 @@ if(left == OFF && right == OFF) {
 \end{columns}
 
 \begin{itemize}
-\item 선수를 멈춰야 하나?(locking?)
+\item 반칙 판정을 위해 선수를 멈춰야 하나?(locking?)
 \item 선수의 snapshot을 구할 수 있으면 OK
 \end{itemize}
 
@@ -44,7 +45,7 @@ Identity $\stackrel{?}{=}$ State
   \end{itemize}
 \item NO: Clojure
   \begin{itemize}
-  \item 현재 state는 identity와 관련된 value
+  \item State는 identity와 관련된 value
   \item Identity는 시간에 따라 다른 value(state)를 가질 수 있음
     \begin{itemize}
     \item 특정 시점에 identity가 가지는 state의 snapshot으로 충분?

@@ -1,17 +1,20 @@
 \begin{frame}
-\frametitle{FUSE}
+\frametitle{FUSE(Filesystem in USErspace)}
 
-동작 원리
+\begin{itemize}
+\item 완전한 filesystem을 userspace에서 구현
+\item Linux kernel 2.4, 2.6에서 실행
+\end{itemize}
 
 \begin{center}
-\pgfimage[width=.7\textwidth]{fuse_structure.png}
+\pgfimage[width=.6\textwidth]{fuse_structure.png}
 \end{center}
 
 \REFERENCE{\url{http://fuse.sourceforge.net/}}
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[shrink]
 \frametitle{FUSE+Subversion}
 
 Example: Conifer Systems사의 Cascade
@@ -21,14 +24,22 @@ Example: Conifer Systems사의 Cascade
 \end{center}
 
 \begin{itemize}
-\item FUSE(Filesystem in Userspace) 
+\item Cache
   \begin{itemize}
-  \item Working directory를 cascade filesystem으로 mount
   \item Repository 데이터 caching
+  \item Working directory를 cascade filesystem으로 mount
   \item Cache를 복수의 working directory에서 공유
   \end{itemize}
-\item Working directory에서 파일 내용을 읽거나 바꿀 때만 file data 전송 
-\item \mbtt{svn}을 대체하는 \mbtt{csc} command line interface 제공
+\item FUSE 기반의 Cascade Filesystem
+  \begin{itemize}
+  \item Working directory를 cascade filesystem으로 mount
+  \item Cache를 복수의 working directory에서 공유
+  \end{itemize}
+\item Operation
+  \begin{itemize}
+  \item Working directory에서 파일 내용을 읽거나 바꿀 때만 file data 전송 
+  \item \mbtt{svn}을 대체하는 \mbtt{csc} command line interface 제공
+  \end{itemize}
 \end{itemize}
 
 \REFERENCE{\url{http://www.conifersystems.com/cascade/}}

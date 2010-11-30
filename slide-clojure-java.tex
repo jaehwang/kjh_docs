@@ -1,7 +1,7 @@
 \begin{frame}
 \frametitle{Clojure-Java Interop: A better Java than Java}
 
-Clojure? JVM에서 실행되는 Lisp 사투리
+Clojure? JVM에서 실행되는 Lisp 사투리. Concurrent programming에 적합하도록 설계 됨.
 
 \begin{itemize}
 \item Simplicity
@@ -10,8 +10,9 @@ Clojure? JVM에서 실행되는 Lisp 사투리
   \item Lisp의 괄호가 정말 문제인가?
   \end{itemize}
 
-\item Immutable data $\rightarrow$ uncontrolled mutation이 없음
+\item First Class Function, Immutable Data 
   \begin{itemize}
+  \item Uncontrolled mutation이 없음
   \item Concurrent programming에 유리한 조건이 됨
   \end{itemize}
 
@@ -21,11 +22,6 @@ Clojure? JVM에서 실행되는 Lisp 사투리
     type으로 바로 사용할 수 있음. (v1.3 이후)
   \end{itemize}
 
-\item Meta data: 임의의 annotation을 할 수 있음.
-%  \begin{itemize}
-%  \item Javadoc하고는 비교가 안 되는 멋진 기능이라는데... 뭔지 정확히
-%    몰라서...
-%  \end{itemize}
 \end{itemize}
 
 \REFERENCE{\url{http://qconsf.com/sf2010/presentation/Clojure-Java+Interop:+A+Better+Java+than+Java}}
